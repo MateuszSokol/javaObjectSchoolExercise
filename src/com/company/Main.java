@@ -28,18 +28,28 @@ dog.feed();
         cat.takeForWalk();
         cat.takeForWalk();
         cat.feed();
-        Car myFirstCar = new Car(2020,"Honda","Civic");
-        Human me = new Human("Mateusz","Sokol",22,10000.20,cat,myFirstCar);
+        Car myFirstCar = new Car(2020,"Honda","Civic",20000.20);
+      //  Car yourCar = new Car(2020,"Honda","Civic",20000.20);
+        Human me = new Human();
+
+        me.firstName ="Mateusz";
+        me.lastName ="Sokol";
+        me.age = 22;
+        me.setSalary(10000.200);
+
+
+        me.setCar(myFirstCar);
 
 
 
-        me.setSalary(100000.0);
+
+
 
         me.introduceYourself();
         //Human myWife = new Human("Andzela","Sasik",18,0.0,dog,);
         //myWife.introduceYourself();
 
-        Car yoursCar = new Car(2010, "Renault", "Clio");
+       // Car yoursCar = new Car(2010, "Renault", "Clio");
 
     }
 }

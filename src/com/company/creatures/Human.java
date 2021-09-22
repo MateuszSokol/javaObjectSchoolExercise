@@ -1,21 +1,13 @@
 package com.company.creatures;
 
 public class Human {
-    String firstName;
-    String lastName;
-    Integer age;
+    public String firstName;
+    public String lastName;
+    public Integer age;
     private Double salary;
     Animal pet;
-    Car car;
+    private Car car;
 
-    public Human(String firstName, String lastName, Integer age, Double salary, Animal pet, Car car) {
-        this.age = age;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.salary = salary;
-        this.pet = pet;
-        this.car = car;
-    }
 
     public void introduceYourself() {
         System.out.println("My name: " + firstName);
@@ -30,11 +22,29 @@ public class Human {
     public void setSalary(Double salary) {
         if (salary < 0) {
             System.out.println("You can't add negative salary");
-        }else{
-            System.out.println("nowe dane zostaly wyslane do systemu ksiegowego"+"\n"+
-                    " konieczności odebrania aneksu do umowy od pani Hani z kadr"+"\n"+
+        } else {
+            System.out.println("nowe dane zostaly wyslane do systemu ksiegowego" + "\n" +
+                    " konieczności odebrania aneksu do umowy od pani Hani z kadr" + "\n" +
                     "ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
         }
         this.salary = salary;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if (salary > car.value) {
+            System.out.println("You have bought car for cash nice");
+
+            this.car = car;
+        } else if (salary > car.value / 12.0) {
+            System.out.println("You have bought car for credit Good Luck");
+            this.car = car;
+
+        } else {
+            System.out.println("You should gain knowledge to have better salary, try matriculate");
+        }
     }
 }
