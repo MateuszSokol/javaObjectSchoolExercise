@@ -33,6 +33,7 @@ dog.feed();
 
 
 
+        me.setSalary(100000.0);
 
         me.introduceYourself();
         //Human myWife = new Human("Andzela","Sasik",18,0.0,dog,);

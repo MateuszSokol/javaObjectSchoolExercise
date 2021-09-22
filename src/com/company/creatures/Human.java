@@ -4,7 +4,7 @@ public class Human {
     String firstName;
     String lastName;
     Integer age;
-    Double salary;
+    private Double salary;
     Animal pet;
     Car car;
 
@@ -20,5 +20,21 @@ public class Human {
     public void introduceYourself() {
         System.out.println("My name: " + firstName);
         System.out.println("My last name: " + lastName);
+    }
+
+    public Double getSalary() {
+
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        if (salary < 0) {
+            System.out.println("You can't add negative salary");
+        }else{
+            System.out.println("nowe dane zostaly wyslane do systemu ksiegowego"+"\n"+
+                    " konieczności odebrania aneksu do umowy od pani Hani z kadr"+"\n"+
+                    "ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
+        }
+        this.salary = salary;
     }
 }
