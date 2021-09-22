@@ -28,14 +28,15 @@ dog.feed();
         cat.takeForWalk();
         cat.takeForWalk();
         cat.feed();
-        Human me = new Human("Mateusz","Sokol",22,10000.20,cat);
+        Car myFirstCar = new Car(2020,"Honda","Civic");
+        Human me = new Human("Mateusz","Sokol",22,10000.20,cat,myFirstCar);
 
 
 
 
         me.introduceYourself();
-        Human myWife = new Human("Andzela","Sasik",18,0.0,dog);
-        myWife.introduceYourself();
+        //Human myWife = new Human("Andzela","Sasik",18,0.0,dog,);
+        //myWife.introduceYourself();
 
         Car yoursCar = new Car(2010, "Renault", "Clio");
 

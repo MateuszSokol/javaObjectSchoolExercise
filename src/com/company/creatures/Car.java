@@ -1,9 +1,9 @@
 package com.company.creatures;
 
 public class Car {
-    Integer prodYear;
-    String producer;
-    String model;
+    final Integer prodYear;
+   final String producer;
+    final String model;
 
     public Car(int year,String producer,String model)
     {
