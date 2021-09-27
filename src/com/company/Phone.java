@@ -6,9 +6,13 @@ public class Phone {
    final Double screenSize;
     String os;
 
-    public Phone(String prodcuer, String model, Double screenSize) {
+    public Phone(String prodcuer, String model, Double screenSize,String os) {
         this.prodcuer = prodcuer;
         this.model = model;
         this.screenSize = screenSize;
+        this.os = os;
+    }
+    public String toString(){
+        return prodcuer + " " + model + " " + screenSize + " " + os + " ";
     }
 }

@@ -47,4 +47,12 @@ public class Human {
             System.out.println("You should gain knowledge to have better salary, try matriculate");
         }
     }
+
+    public String toString(){
+        return firstName + " " + lastName + " " + age + " " + salary + " " + pet + " " + car + " ";
+    }
+    public void setPet(Animal pet){
+        this.pet = pet;
+    }
+
 }

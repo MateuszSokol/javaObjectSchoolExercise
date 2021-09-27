@@ -45,11 +45,36 @@ dog.feed();
 
 
 
-        me.introduceYourself();
-        //Human myWife = new Human("Andzela","Sasik",18,0.0,dog,);
-        //myWife.introduceYourself();
 
-       // Car yoursCar = new Car(2010, "Renault", "Clio");
+        me.introduceYourself();
+        Human myWife = new Human();
+        myWife.age = 25;
+        myWife.firstName = "Halyna";
+        myWife.lastName = "Kapusta";
+
+      //  myWife.introduceYourself();
+
+        Car yoursCar = new Car(2020, "Honda", "Civic",20000.20);
+
+        myWife.setSalary(300000.1);
+        myWife.setCar(yoursCar);
+
+        System.out.println(new Car(2020,"Honda","Civic",20000.20).
+                equals(new Car(2020,"Honda","Civic",20000.20)));
+        Phone myPhone = new Phone("Apple","6",12.4,"IOS");
+        Phone wifePhone = new Phone("Samsung","9",10.5,"Android");
+        me.setPet(cat);
+        myWife.setPet(dog);
+
+        System.out.println(myFirstCar);
+        System.out.println(yoursCar);
+        System.out.println(dog);
+        System.out.println(cat);
+        System.out.println(me);
+        System.out.println(myWife);
+        System.out.println(myPhone);
+        System.out.println(wifePhone);
+
 
     }
 }
