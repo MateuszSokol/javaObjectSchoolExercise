@@ -1,4 +1,4 @@
-package com.company.creatures;
+package com.company.devices;
 
 import java.util.Objects;
 
@@ -30,6 +30,9 @@ public class Car {
     }
     public String toString(){
         return prodYear + " " +producer +" " +model + " " + value + " ";
+    }
+    public Double getValue(){
+        return  value;
     }
 
 }

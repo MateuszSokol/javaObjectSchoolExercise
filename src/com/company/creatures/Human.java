@@ -1,5 +1,7 @@
 package com.company.creatures;
 
+import com.company.devices.Car;
+
 public class Human {
     public String firstName;
     public String lastName;
@@ -34,12 +36,14 @@ public class Human {
         return car;
     }
 
+
+
     public void setCar(Car car) {
-        if (salary > car.value) {
+        if (salary > car.getValue()) {
             System.out.println("You have bought car for cash nice");
 
             this.car = car;
-        } else if (salary > car.value / 12.0) {
+        } else if (salary > car.getValue() / 12.0) {
             System.out.println("You have bought car for credit Good Luck");
             this.car = car;
 
