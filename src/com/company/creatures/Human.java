@@ -16,10 +16,7 @@ public class Human {
         System.out.println("My last name: " + lastName);
     }
 
-    public Double getSalary() {
 
-        return salary;
-    }
 
     public void setSalary(Double salary) {
         if (salary < 0) {
@@ -28,13 +25,10 @@ public class Human {
             System.out.println("nowe dane zostaly wyslane do systemu ksiegowego" + "\n" +
                     " konieczności odebrania aneksu do umowy od pani Hani z kadr" + "\n" +
                     "ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
+            this.salary = salary;
         }
-        this.salary = salary;
     }
 
-    public Car getCar() {
-        return car;
-    }
 
 
 
