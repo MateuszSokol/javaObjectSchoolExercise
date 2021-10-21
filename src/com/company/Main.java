@@ -50,7 +50,7 @@ dog.feed();
         me.introduceYourself();
         Human myWife = new Human();
         myWife.age = 25;
-        myWife.firstName = "Halyna";
+        myWife.firstName = "Halina";
         myWife.lastName = "Kapusta";
 
       //  myWife.introduceYourself();
