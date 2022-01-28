@@ -12,15 +12,15 @@ public class Human {
 
 
     public void introduceYourself() {
-        System.out.println("My name: " + firstName);
-        System.out.println("My last name: " + lastName);
+        System.out.println("Moje imie: " + firstName);
+        System.out.println("Moje nazwisko " + lastName);
     }
 
 
 
     public void setSalary(Double salary) {
         if (salary < 0) {
-            System.out.println("You can't add negative salary");
+            System.out.println("Nie mozesz dac ujemnego wynagrodzenia, bez przesady");
         } else {
             System.out.println("nowe dane zostaly wyslane do systemu ksiegowego" + "\n" +
                     " konieczności odebrania aneksu do umowy od pani Hani z kadr" + "\n" +
@@ -34,15 +34,15 @@ public class Human {
 
     public void setCar(Car car) {
         if (salary > car.getValue()) {
-            System.out.println("You have bought car for cash nice");
+            System.out.println("Kupiles samochod za gotowke");
 
             this.car = car;
         } else if (salary > car.getValue() / 12.0) {
-            System.out.println("You have bought car for credit Good Luck");
+            System.out.println("Kupiles samochod na kredyt, powodzenia ze splata");
             this.car = car;
 
         } else {
-            System.out.println("You should gain knowledge to have better salary, try matriculate");
+            System.out.println("Powinienies sie doedukowac, nie masz pieniedzy");
         }
     }
 

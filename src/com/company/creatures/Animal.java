@@ -27,10 +27,10 @@ public class Animal {
         if (this.weight > 0) {
 
             this.weight += 5;
-            System.out.println("weight: " + weight);
+            System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
-            System.out.println("You can't feed dead animal " + species);
-            System.out.println("weight: " + weight);
+            System.out.println("Nie mozesz nakarmic martwego zwierzaka " + species);
+            System.out.println("Waga: " + weight);
         }
     }
 
@@ -38,10 +38,10 @@ public class Animal {
         if (this.weight > 0) {
 
             this.weight -= 5;
-            System.out.println("weight: " + weight);
+            System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
-            System.out.println("you can't take walk with dead animal " + species);
-            System.out.println("weight: " + weight);
+            System.out.println("Nie mozesz wziac na spacer martwego zwierza " + species);
+            System.out.println("Waga: " + weight);
         }
 
     }
