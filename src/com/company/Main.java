@@ -13,7 +13,7 @@ public class Main {
 
 
         dog.name ="Józek";
-        System.out.println("dog name: "+dog.name);
+        System.out.println("imie psa: "+dog.name);
         dog.feed();
         dog.takeForWalk();
         dog.takeForWalk();
@@ -24,19 +24,19 @@ dog.feed();
 
         Animal cat = new Animal("fenis");
         cat.name = "Koteczek";
-        System.out.println("cat name: "+ cat.name);
-        System.out.println("cat weight : "+ cat.getWeight());
+        System.out.println("Imie kota: "+ cat.name);
+        System.out.println("Waga kota : "+ cat.getWeight());
         cat.takeForWalk();
         cat.takeForWalk();
         cat.feed();
-        Car myFirstCar = new Car(2020,"Honda","Civic",20000.20);
-      //  Car yourCar = new Car(2020,"Honda","Civic",20000.20);
+        Car myFirstCar = new Car("Renault","Megane",1999,10000.0);
         Human me = new Human();
 
         me.firstName ="Mateusz";
         me.lastName ="Sokol";
         me.age = 22;
-        me.setSalary(10000.200);
+        me.setSalary(1.200);
+
 
 
         me.setCar(myFirstCar);
@@ -55,15 +55,16 @@ dog.feed();
 
       //  myWife.introduceYourself();
 
-        Car yoursCar = new Car(2020, "Honda", "Civic",20000.20);
+        Car yoursCar = new Car("Honda","Civic",2000,20000.4);
+
 
         myWife.setSalary(300000.1);
         myWife.setCar(yoursCar);
 
-        System.out.println(new Car(2020,"Honda","Civic",20000.20).
-                equals(new Car(2020,"Honda","Civic",20000.20)));
-        Phone myPhone = new Phone("Apple","6",12.4,"IOS");
-        Phone wifePhone = new Phone("Samsung","9",10.5,"Android");
+        System.out.println(new Car("Renault","Clio",1998,21000.0).
+                equals(new Car("Renault","Clio",1998,21000.0)));
+        Phone myPhone = new Phone("Apple","12",2018,12,"iOS");
+        Phone wifePhone = new Phone("Samsung","A122",2021,10,"Android");
         me.setPet(cat);
         myWife.setPet(dog);
 
