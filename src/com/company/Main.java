@@ -39,6 +39,7 @@ dog.feed();
 
 
 
+
         me.setCar(myFirstCar);
 
 
@@ -67,6 +68,8 @@ dog.feed();
         Phone wifePhone = new Phone("Samsung","A122",2021,10,"Android");
         me.setPet(cat);
         myWife.setPet(dog);
+        me.setPhone(myPhone);
+        myWife.setPhone(wifePhone);
 
         System.out.println(myFirstCar);
         System.out.println(yoursCar);
@@ -74,9 +77,17 @@ dog.feed();
         System.out.println(cat);
         System.out.println(me);
         System.out.println(myWife);
-        System.out.println(myPhone);
-        System.out.println(wifePhone);
-        System.out.println(myPhone);
+        System.out.println(me.getPhone());
+        System.out.println(myWife.getPhone());
+
+
+        try {
+            me.getPhone().sell(me,myWife,10.0);
+            me.getPet().sell(me,myWife,20.0);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //cat.sell(myWife,me,20.0);
 
 
     }

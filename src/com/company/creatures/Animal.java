@@ -1,6 +1,8 @@
 package com.company.creatures;
 
-public class Animal {
+import com.company.Sellable;
+
+public class Animal implements Sellable {
     public String species;
     private Double weight;
     public String name;
@@ -48,6 +50,32 @@ public class Animal {
 
     public String toString() {
         return species + " " + weight + " " + name + " ";
+    }
+
+    @Override
+    public void sell(Human seller,Human buyer,Double cash) throws InterruptedException {
+        System.out.println("Zwierze sprzedajacego: "+seller.getPet());
+        System.out.println("Zwierzak sprzedajacego: "+buyer.getPet());
+
+        System.out.println("Stan konta przed kupnem"+"\n"
+                +"Kupujacy: "+buyer.getCash() +"\n"+ " Sprzedajacy: "+seller.getCash());
+
+        System.out.println("Transakcja trwa...");
+        Thread.sleep(2000);
+        if(seller.getPet() != null && buyer.getCash()>=cash){
+            seller.setCash(seller.getCash()+cash);
+            buyer.setCash(buyer.getCash()-cash);
+            buyer.setPet(seller.getPet());
+            seller.setPet(null);
+            System.out.println("Stan konta po zakupie"+"\n"+
+                    "Kupujacy: "+buyer.getCash()+"\n"+" Sprzedajacy: "+seller.getCash());
+            System.out.println("Zwierzak sprzedajacego: "+seller.getPet());
+            System.out.println("Zwierzak kupujacego: "+buyer.getPet());
+
+
+        }else{
+            System.out.println("Nie masz pieniedzy lub zwierzaka"+seller.getPet()+"/"+seller.getCash());
+        }
     }
 
 }
