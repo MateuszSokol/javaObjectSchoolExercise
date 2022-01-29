@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Car extends Device {
     Double value;
+    boolean isOn;
 
     public Car(String producer, String model, int prodYear,Double value) {
         super(producer, model, prodYear);
@@ -12,6 +13,7 @@ public class Car extends Device {
 
     @Override
     public void turnOn() {
+        isOn = true;
         System.out.println("Urzadzenie wlaczone, mozna jechac");
     }
 
@@ -28,9 +30,18 @@ public class Car extends Device {
         return prodYear == car.prodYear && producer.equals(car.producer) && model.equals(car.model)
                 && Objects.equals(value, car.value);
     }
-    public String toString(){
-        return prodYear + " " +producer +" " +model + " " + value + " ";
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "value=" + value +
+                ", isOn=" + isOn +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", prodYear=" + prodYear +
+                '}';
     }
+
     public Double getValue(){
         return  value;
     }

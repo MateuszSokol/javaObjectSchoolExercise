@@ -76,6 +76,7 @@ dog.feed();
         System.out.println(myWife);
         System.out.println(myPhone);
         System.out.println(wifePhone);
+        System.out.println(myPhone);
 
 
     }
