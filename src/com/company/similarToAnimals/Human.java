@@ -1,6 +1,5 @@
-package com.company.creatures;
+package com.company.similarToAnimals;
 
-import com.company.Sellable;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 

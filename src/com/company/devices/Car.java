@@ -1,7 +1,7 @@
 package com.company.devices;
 
-import com.company.Sellable;
-import com.company.creatures.Human;
+import com.company.similarToAnimals.Sellable;
+import com.company.similarToAnimals.Human;
 
 import java.util.Objects;
 

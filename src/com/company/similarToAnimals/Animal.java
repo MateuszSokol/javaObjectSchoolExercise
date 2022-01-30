@@ -1,8 +1,9 @@
-package com.company.creatures;
+package com.company.similarToAnimals;
 
-import com.company.Sellable;
+import com.company.similarToAnimals.Human;
+import com.company.similarToAnimals.Sellable;
 
-public class Animal implements Sellable {
+public abstract class Animal implements Sellable {
     public String species;
     private Double weight;
     public String name;
@@ -11,10 +12,11 @@ public class Animal implements Sellable {
         return weight;
     }
 
-    public Animal(String species) {
+    public Animal(String species,Double weight) {
 
         this.species = species;
 
+        this.weight = weight;
 
         if (species.equals("canis")) {
             this.weight = 10.0;
@@ -53,7 +55,7 @@ public class Animal implements Sellable {
     }
 
     @Override
-    public void sell(Human seller,Human buyer,Double cash) throws InterruptedException {
+    public void sell(Human seller, Human buyer, Double cash) throws InterruptedException {
         System.out.println("Zwierze sprzedajacego: "+seller.getPet());
         System.out.println("Zwierzak sprzedajacego: "+buyer.getPet());
 

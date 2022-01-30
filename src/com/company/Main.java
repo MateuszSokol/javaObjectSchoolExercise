@@ -1,15 +1,16 @@
 package com.company;
 
-import com.company.creatures.Animal;
+import com.company.similarToAnimals.Animal;
 import com.company.devices.Car;
-import com.company.creatures.Human;
+import com.company.similarToAnimals.Human;
 import com.company.devices.Phone;
+import com.company.similarToAnimals.Pet;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("canis");
+        Pet dog = new Pet("canis",14.0,"Labrador");
 
 
         dog.name ="Józek";
@@ -22,7 +23,7 @@ public class Main {
         dog.takeForWalk();
 dog.feed();
 
-        Animal cat = new Animal("fenis");
+        Pet cat = new Pet("fenis",3.0,"dachowiec");
         cat.name = "Koteczek";
         System.out.println("Imie kota: "+ cat.name);
         System.out.println("Waga kota : "+ cat.getWeight());
@@ -84,6 +85,7 @@ dog.feed();
         try {
             me.getPhone().sell(me,myWife,10.0);
             me.getPet().sell(me,myWife,20.0);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
