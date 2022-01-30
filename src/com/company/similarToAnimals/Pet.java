@@ -3,7 +3,7 @@ package com.company.similarToAnimals;
 import com.company.similarToAnimals.Edible;
 import com.company.similarToAnimals.Animal;
 
-public class Pet extends Animal implements Edible {
+public class Pet extends Animal {
     String accurateType;
 
     public Pet(String species, Double weight, String accurateType){
@@ -12,8 +12,5 @@ public class Pet extends Animal implements Edible {
 
     }
 
-    @Override
-    public void beEaten() {
-        System.out.println("Zjedzony");
-    }
+
 }
