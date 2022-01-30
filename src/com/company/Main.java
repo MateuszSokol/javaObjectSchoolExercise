@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.similarToAnimals.Animal;
 import com.company.devices.Car;
+import com.company.similarToAnimals.FarmAnimal;
 import com.company.similarToAnimals.Human;
 import com.company.devices.Phone;
 import com.company.similarToAnimals.Pet;
@@ -89,6 +90,9 @@ dog.feed();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        FarmAnimal chicken = new FarmAnimal("bird",3.15,"mieso");
+        System.out.println(chicken);
         //cat.sell(myWife,me,20.0);
 
 
