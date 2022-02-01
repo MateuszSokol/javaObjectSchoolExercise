@@ -7,7 +7,7 @@ public abstract class Animal implements Sellable ,Feedable{
     public String species;
     private Double weight;
     public String name;
-     private static final Double DEFAULT_FOOD_WEIGHT = 1.1;
+     private static final Double DEFAULT_FOOD_WEIGHT = 1.0;
 
     public Double getWeight() {
         return weight;
@@ -20,9 +20,9 @@ public abstract class Animal implements Sellable ,Feedable{
         this.weight = weight;
 
         if (species.equals("canis")) {
-            this.weight = 10.0;
+            this.weight = 4.0;
         } else if (species.equals("fenis")) {
-            this.weight = 5.0;
+            this.weight = 3.0;
         }
 
 
@@ -71,7 +71,7 @@ public abstract class Animal implements Sellable ,Feedable{
 
         System.out.println("Transakcja trwa...");
         Thread.sleep(2000);
-        if(seller.getPet() != null && buyer.getCash()>=cash){
+        if(seller.getPet() != null && buyer.getCash()>=cash && seller.getPet().getWeight()>0){
             seller.setCash(seller.getCash()+cash);
             buyer.setCash(buyer.getCash()-cash);
             buyer.setPet(seller.getPet());
@@ -83,7 +83,8 @@ public abstract class Animal implements Sellable ,Feedable{
 
 
         }else{
-            System.out.println("Nie masz pieniedzy lub zwierzaka"+seller.getPet()+"/"+seller.getCash());
+            System.out.println("Nie masz pieniedzy lub zwierzaka albo masz martwego zwierza :/" +
+                    ""+seller.getPet()+"/"+seller.getCash());
         }
     }
 

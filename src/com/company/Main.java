@@ -24,7 +24,7 @@ public class Main {
         dog.takeForWalk();
 dog.feed();
 
-        Pet cat = new Pet("fenis",3.0,"dachowiec");
+        Pet cat = new Pet("fenis",1.0,"dachowiec");
         cat.name = "Koteczek";
         System.out.println("Imie kota: "+ cat.name);
         System.out.println("Waga kota : "+ cat.getWeight());
@@ -82,10 +82,11 @@ dog.feed();
         System.out.println(me.getPhone());
         System.out.println(myWife.getPhone());
 
-
+        System.out.println(me.getPet().getWeight());
+        System.out.println(myWife.getPet().getWeight());
         try {
             me.getPhone().sell(me,myWife,10.0);
-            me.getPet().sell(me,myWife,20.0);
+            myWife.getPet().sell(myWife,me,20.0);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
