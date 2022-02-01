@@ -20,4 +20,6 @@ public class FarmAnimal extends Animal implements Edible{
         return "Gatunek: " + species + " Waga: " + getWeight() +" Produkt: "+ animalProduct;
 
     }
+
+
 }

@@ -3,10 +3,11 @@ package com.company.similarToAnimals;
 import com.company.similarToAnimals.Human;
 import com.company.similarToAnimals.Sellable;
 
-public abstract class Animal implements Sellable {
+public abstract class Animal implements Sellable ,Feedable{
     public String species;
     private Double weight;
     public String name;
+     private static final Double DEFAULT_FOOD_WEIGHT = 1.1;
 
     public Double getWeight() {
         return weight;
@@ -27,10 +28,16 @@ public abstract class Animal implements Sellable {
 
     }
 
+
+    @Override
     public void feed() {
+        this.feed(DEFAULT_FOOD_WEIGHT);
+    }
+
+    public void feed(Double FoodWeight) {
         if (this.weight > 0) {
 
-            this.weight += 5;
+            this.weight += FoodWeight;
             System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
             System.out.println("Nie mozesz nakarmic martwego zwierzaka " + species);
@@ -41,7 +48,7 @@ public abstract class Animal implements Sellable {
     public void takeForWalk() {
         if (this.weight > 0) {
 
-            this.weight -= 5;
+            this.weight -= DEFAULT_FOOD_WEIGHT;
             System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
             System.out.println("Nie mozesz wziac na spacer martwego zwierza " + species);
