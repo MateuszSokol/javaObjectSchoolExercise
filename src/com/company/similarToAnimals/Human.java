@@ -3,6 +3,8 @@ package com.company.similarToAnimals;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.util.Date;
+
 public class Human implements Sellable{
     public String firstName;
     public String lastName;
@@ -12,6 +14,7 @@ public class Human implements Sellable{
     private Car car;
     private double cash;
     Phone phone;
+   Double cashBeforePayments;
 
 
     public void introduceYourself() {
@@ -22,16 +25,34 @@ public class Human implements Sellable{
 
 
     public void setSalary(Double salary) {
+
+
         if (salary < 0) {
             System.out.println("Nie mozesz dac ujemnego wynagrodzenia, bez przesady");
         } else {
+
             System.out.println("nowe dane zostaly wyslane do systemu ksiegowego" + "\n" +
                     " konieczności odebrania aneksu do umowy od pani Hani z kadr" + "\n" +
                     "ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
             this.salary = salary;
+
             setCash(getCash()+salary);
         }
     }
+    public void getInfoAboutWithdraw(Double salary){
+        Date datetime = new Date();
+        double cashBefore = this.cash -salary;
+
+        System.out.println("Kwota pensji: "+salary);
+        System.out.println("Data ostatnio pobieranych informacji: "+ datetime);
+        System.out.println("Stan konta przed dostarczeniem pensji: "+ cashBefore);
+    }
+
+    public Double getSalary(){
+        return this.salary;
+    }
+
+
 
 
 
@@ -60,6 +81,8 @@ public class Human implements Sellable{
     public Car getCar(){
         return this.car;
     }
+
+
 
     public double getCash() {
         return cash;

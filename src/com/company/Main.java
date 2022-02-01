@@ -82,8 +82,6 @@ dog.feed();
         System.out.println(me.getPhone());
         System.out.println(myWife.getPhone());
 
-        System.out.println(me.getPet().getWeight());
-        System.out.println(myWife.getPet().getWeight());
         try {
             me.getPhone().sell(me,myWife,10.0);
             myWife.getPet().sell(myWife,me,20.0);
@@ -96,6 +94,8 @@ dog.feed();
         System.out.println(chicken);
         //cat.sell(myWife,me,20.0);
 
+
+   me.getInfoAboutWithdraw(me.getSalary());
 
     }
 }
