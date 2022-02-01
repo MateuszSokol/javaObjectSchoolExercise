@@ -21,9 +21,9 @@ public abstract class Animal implements Sellable ,Feedable{
         this.weight = weight;
 
         if (species.equals("canis")) {
-            this.weight = 4.0;
+            this.weight = 10.0;
         } else if (species.equals("fenis")) {
-            this.weight = 3.0;
+            this.weight = 15.0;
         }
 
 
@@ -41,6 +41,7 @@ public abstract class Animal implements Sellable ,Feedable{
             this.weight += FoodWeight;
             System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
+
             System.out.println("Nie mozesz nakarmic martwego zwierzaka " + species);
             System.out.println("Waga: " + weight);
         }
@@ -52,6 +53,7 @@ public abstract class Animal implements Sellable ,Feedable{
             this.weight -= DEFAULT_WALK_LOSE_WEIGHT;
             System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
+
             System.out.println("Nie mozesz wziac na spacer martwego zwierza " + species);
             System.out.println("Waga: " + weight);
         }

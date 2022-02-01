@@ -1,10 +1,9 @@
 package com.company;
 
+import com.company.devices.*;
 import com.company.similarToAnimals.Animal;
-import com.company.devices.Car;
 import com.company.similarToAnimals.FarmAnimal;
 import com.company.similarToAnimals.Human;
-import com.company.devices.Phone;
 import com.company.similarToAnimals.Pet;
 
 public class Main {
@@ -31,7 +30,8 @@ dog.feed();
         cat.takeForWalk();
         cat.takeForWalk();
         cat.feed();
-        Car myFirstCar = new Car("Renault","Megane",1999,10000.0);
+        Diesel myFirstCar = new Diesel("Renault","Megane",1999,100.0,"Diesel");
+
         Human me = new Human();
 
         me.firstName ="Mateusz";
@@ -39,15 +39,7 @@ dog.feed();
         me.age = 22;
         me.setSalary(1.200);
 
-
-
-
         me.setCar(myFirstCar);
-
-
-
-
-
 
 
         me.introduceYourself();
@@ -58,14 +50,14 @@ dog.feed();
 
       //  myWife.introduceYourself();
 
-        Car yoursCar = new Car("Honda","Civic",2000,20000.4);
+        LPG yoursCar = new LPG("Fiat","125p",2000,20000.4,"Gaz");
 
 
         myWife.setSalary(300000.1);
         myWife.setCar(yoursCar);
 
-        System.out.println(new Car("Renault","Clio",1998,21000.0).
-                equals(new Car("Renault","Clio",1998,21000.0)));
+        System.out.println(new LPG("Renault","Clio",1998,21000.0,"Diesel").
+                equals(new LPG("Renault","Clio",1998,21000.0,"Diesel")));
         Phone myPhone = new Phone("Apple","12",2018,12,"iOS");
         Phone wifePhone = new Phone("Samsung","A122",2021,10,"Android");
         me.setPet(cat);
@@ -94,8 +86,10 @@ dog.feed();
         System.out.println(chicken);
         //cat.sell(myWife,me,20.0);
 
-
    me.getInfoAboutWithdraw(me.getSalary());
+
+   Electric electricCar = new Electric("Tesla","S",2020,1000.0,"Electric");
+        System.out.println(electricCar);
 
     }
 }

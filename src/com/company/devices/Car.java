@@ -5,15 +5,17 @@ import com.company.similarToAnimals.Human;
 
 import java.util.Objects;
 
-public class Car extends Device implements Sellable  {
+public abstract class Car extends Device implements Sellable  {
     Double value;
     boolean isOn;
+
 
     public Car(String producer, String model, int prodYear,Double value) {
         super(producer, model, prodYear);
         this.value = value;
     }
 
+    public abstract void refuel();
     @Override
     public void turnOn() {
         isOn = true;

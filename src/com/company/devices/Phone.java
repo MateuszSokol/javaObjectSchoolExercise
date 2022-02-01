@@ -3,11 +3,18 @@ package com.company.devices;
 import com.company.similarToAnimals.Sellable;
 import com.company.similarToAnimals.Human;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
 public class Phone extends Device implements Sellable {
 
     int screenSize;
     String os;
     boolean isOn;
+    private static final String DEFAULT_SERVER_ADDRESS ="wsb.pl";
+    private static final String DEFAULT_PROTOCOL = "HTTP";
+    private static final String DEFAULT_VERSION_NAME = "Version 163812";
 
     public Phone(String producer, String model, int prodYear,int screenSize,String os)
     {
@@ -55,5 +62,39 @@ public class Phone extends Device implements Sellable {
         }else{
             System.out.println("Nie masz pieniedzy albo telefonu"+seller.getPhone()+"/"+seller.getCash());
         }
+
+
+
+
+
+
+    }
+    public void installAnnApp(String appName){
+this.installAnnApp(appName,DEFAULT_VERSION_NAME);
+    }
+    public void installAnnApp(String appName,String version){
+        this.installAnnApp(appName,version,DEFAULT_SERVER_ADDRESS);
+
+    }
+    public void installAnnApp(String appName,String version,String serverAddress){
+        try{
+            URL url = new URL(DEFAULT_PROTOCOL,serverAddress,420,appName+ "-"+version);
+            this.installAnnApp(url);
+        }catch (MalformedURLException e){
+            System.out.println("cos poszlo nie tak");
+            e.printStackTrace();
+        }
+
+
+    }
+    public void installAnApp(List<String> appNames){
+        for (String apps:appNames
+             ) {
+            this.installAnnApp(apps);
+        }
+    }
+    public void installAnnApp(URL url){
+        System.out.println("Instalowanie aplikacji z podanego adresu URL: "+ url);
+
     }
 }
