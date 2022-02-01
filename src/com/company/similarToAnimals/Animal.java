@@ -4,10 +4,11 @@ import com.company.similarToAnimals.Human;
 import com.company.similarToAnimals.Sellable;
 
 public abstract class Animal implements Sellable ,Feedable{
-    public String species;
+    final String species;
     private Double weight;
     public String name;
-     private static final Double DEFAULT_FOOD_WEIGHT = 1.0;
+     private final Double DEFAULT_FOOD_WEIGHT = 1.0;
+    private final Double DEFAULT_WALK_LOSE_WEIGHT = 2.0;
 
     public Double getWeight() {
         return weight;
@@ -48,7 +49,7 @@ public abstract class Animal implements Sellable ,Feedable{
     public void takeForWalk() {
         if (this.weight > 0) {
 
-            this.weight -= DEFAULT_FOOD_WEIGHT;
+            this.weight -= DEFAULT_WALK_LOSE_WEIGHT;
             System.out.println("Waga: " + weight);
         } else if (this.weight <= 0) {
             System.out.println("Nie mozesz wziac na spacer martwego zwierza " + species);
