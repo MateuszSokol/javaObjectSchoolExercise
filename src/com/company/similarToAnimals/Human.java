@@ -3,6 +3,7 @@ package com.company.similarToAnimals;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Human implements Sellable{
@@ -11,11 +12,20 @@ public class Human implements Sellable{
     public Integer age;
     private Double salary;
     Animal pet;
-    private Car car;
+public Car [] garage;
     private double cash;
     Phone phone;
-   Double cashBeforePayments;
 
+
+    public Human(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    public Human(String firstName,String lastName,Integer garageSize){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.garage = new Car[garageSize];
+    }
 
     public void introduceYourself() {
         System.out.println("Moje imie: " + firstName);
@@ -54,17 +64,14 @@ public class Human implements Sellable{
 
 
 
-
-
-
-    public void setCar(Car car) {
+    public void setCar(Human owner,Integer parkingSpot,Car car) {
         if (salary > car.getValue()) {
             System.out.println("Kupiles samochod za gotowke");
 
-            this.car = car;
+            owner.garage[parkingSpot] =car;
         } else if (salary > car.getValue() / 12.0) {
             System.out.println("Kupiles samochod na kredyt, powodzenia ze splata");
-            this.car = car;
+            owner.garage[parkingSpot] =car;
 
         } else {
             System.out.println("Powinienies sie doedukowac, nie masz pieniedzy");
@@ -72,17 +79,11 @@ public class Human implements Sellable{
     }
 
     public String toString(){
-        return firstName + " " + lastName + " " + age + " " + salary + " " + pet + " " + car + " ";
+        return firstName + " " + lastName + " " + age + " " + salary + " " + pet + " " + Arrays.toString(garage) + " ";
     }
     public void setPet(Animal pet){
         this.pet = pet;
     }
-
-    public Car getCar(){
-        return this.car;
-    }
-
-
 
     public double getCash() {
         return cash;
@@ -107,5 +108,75 @@ public class Human implements Sellable{
     @Override
     public void sell(Human seller, Human buyer, Double price) {
         System.out.println("Zakaz handlu ludzmi");
+    }
+
+    public void addCarToFreeSpot(Human buyer,Human seller,Integer sellerCarSpot) {
+        for (int i = 0; i < buyer.garage.length; i++) {
+            if(buyer.garage[i] == null) {
+                buyer.garage[i] = seller.garage[sellerCarSpot];
+                break;
+            }
+
+        }
+
+    }
+
+    public Integer returnCarSpotInGarage(Human seller){
+
+        int a = 0;
+        for (int i = 0; i < seller.garage.length; i++) {
+            if(seller.garage[i] != null) {
+                a = i;
+                break;
+            }
+
+        }
+        return a;
+    }
+    public boolean isGarageSellerNotNull(Human seller,Integer spot){
+        boolean isFree = false;
+        if(seller.garage[spot] !=null){
+            isFree = true;
+        }
+        return isFree;
+    }
+
+    public boolean isFreeSpotInBuyerGarage(Human buyer){
+
+        boolean isFree = false;
+        for (Car car:
+                buyer.garage) {
+            if(car ==null){
+                isFree= true;
+                break;
+            }
+        }
+        return isFree;
+    }
+
+    public void removeCarFromSellerSpot(Human seller,Integer spot){
+        seller.garage[spot] = null;
+    }
+    public Double getCarsInGarageValue(Human human){
+        double value = 0;
+
+        for (int i = 0; i <human.garage.length ; i++) {
+            if(human.garage[i] != null)
+            value +=human.garage[i].getValue();
+        }
+        return  value;
+    }
+
+    public void sortCarsByProdYear(Human owner){
+        Car temp;
+        for (int i = 0; i < owner.garage.length; i++) {
+
+                if(garage[i] != null && garage[i+1] != null && garage[i].getProdYear()>garage[i+1].getProdYear()){
+                    temp = garage[i+1];
+                    garage[i+1] = garage[i];
+                    garage[i] = temp;
+                }
+
+        }
     }
 }

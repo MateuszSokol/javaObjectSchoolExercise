@@ -1,6 +1,7 @@
 package com.company.devices;
 
 public abstract class Device {
+    Double value;
     final String producer;
     final String model;
     final int prodYear;
