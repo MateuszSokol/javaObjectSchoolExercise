@@ -106,5 +106,21 @@ dog.feed();
         Electric electricCar = new Electric("Tesla","S",2020,1000.0,"Electric");
         System.out.println(electricCar);
 
+
+        System.out.println(myFirstCar.getCarOwners());
+
+        System.out.println();
+        Human bob = new Human("Bob","Bob",2);
+        try {
+            myFirstCar.sell(myWife,me,2.0);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(myFirstCar.isCarOwner(bob));
+        System.out.println();
+        System.out.println(myFirstCar.wasItFromManAToManB(me,myWife));
+
+        System.out.println(myFirstCar.numberOfTransaction());
     }
 }

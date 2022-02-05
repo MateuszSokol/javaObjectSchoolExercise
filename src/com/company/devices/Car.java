@@ -3,15 +3,26 @@ package com.company.devices;
 import com.company.similarToAnimals.Sellable;
 import com.company.similarToAnimals.Human;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Car extends Device implements Sellable  {
 
     boolean isOn;
+    LinkedList<String> carOwners = new LinkedList<>();
 
     public Car(String producer, String model, int prodYear,Double value) {
         super(producer, model, prodYear);
         this.value = value;
+    }
+
+    public List<String> getCarOwners() {
+        return carOwners;
+    }
+
+    public void setCarOwners(Human owner){
+        this.carOwners.add(owner.lastName);
     }
     public Integer getProdYear(){
         return prodYear;
@@ -61,7 +72,8 @@ public abstract class Car extends Device implements Sellable  {
         Thread.sleep(2000);
 
         if(seller.isGarageSellerNotNull(seller,seller.returnCarSpotInGarage(seller)) && buyer.getCash()>=cash&&
-                buyer.isFreeSpotInBuyerGarage(buyer)){
+                buyer.isFreeSpotInBuyerGarage(buyer)&&carOwners.getLast().equals(seller.lastName)){
+            setCarOwners(buyer);
             seller.setCash(seller.getCash()+cash);
             buyer.setCash(buyer.getCash()-cash);
             buyer.addCarToFreeSpot(buyer,seller, seller.returnCarSpotInGarage(seller));
@@ -69,10 +81,34 @@ public abstract class Car extends Device implements Sellable  {
             System.out.println("Stan konta po zakupie"+"\n"+
                     "Kupujacy: "+buyer.getCash()+"\n"+" Sprzedajacy: "+seller.getCash());
 
+
         }else{
             System.out.println("Nie masz pieniedzy albo samochodu lub kupujacy nie posiada miejsca parkingowego");
 
         }
     }
 
+    public boolean isCarOwner(Human candidate){
+
+        boolean value = false;
+
+        if(candidate.lastName.equals(carOwners.element())){
+            value =true;
+        }
+        return value;
+    }
+
+    public boolean wasItFromManAToManB(Human manA,Human  manB){
+        for (int i = 0; i <carOwners.size() ; i++) {
+            if(i+1<carOwners.size())
+            if(carOwners.get(i).equals(manA.lastName) && carOwners.get(i+1).equals(manB.lastName)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public int numberOfTransaction(){
+
+        return carOwners.size();
+    }
 }

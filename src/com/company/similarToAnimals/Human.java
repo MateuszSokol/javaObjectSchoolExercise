@@ -67,6 +67,7 @@ public Car [] garage;
     public void setCar(Human owner,Integer parkingSpot,Car car) {
         if (salary > car.getValue()) {
             System.out.println("Kupiles samochod za gotowke");
+            car.setCarOwners(owner);
 
             owner.garage[parkingSpot] =car;
         } else if (salary > car.getValue() / 12.0) {
