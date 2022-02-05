@@ -122,5 +122,24 @@ dog.feed();
         System.out.println(myFirstCar.wasItFromManAToManB(me,myWife));
 
         System.out.println(myFirstCar.numberOfTransaction());
+        System.out.println();
+
+        Application app1 = new Application("Sony","200012321",0.0);
+        Application app2 = new Application("Nintendo","13",0.0);
+
+
+        me.setPhone(wifePhone);
+        myPhone.installApplication(me,myPhone,app1);
+        myPhone.installApplication(myWife,myPhone,app1);
+        myPhone.installApplication(myWife,myPhone,app2);
+
+        System.out.println(myPhone.isApplicationInstalled(app1));
+        System.out.println(myPhone.isApplicationInstalled(app1.getAppName()));
+
+        System.out.println();
+        myPhone.printAllFreeApps(myPhone);
+        System.out.println(myPhone.printApplicationsValue(myPhone));
+        myPhone.sortListByApplicationName(myPhone);
+
     }
 }
